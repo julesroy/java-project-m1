@@ -1,0 +1,209 @@
+[
+    {
+        "year": 2026,
+        "positionDisplayOrder": 1,
+        "positionNumber": 1,
+        "positionText": "1",
+        "driverId": "kimi-antonelli",
+        "points": 340,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 2,
+        "positionNumber": 2,
+        "positionText": "2",
+        "driverId": "george-russell",
+        "points": 238,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 3,
+        "positionNumber": 3,
+        "positionText": "3",
+        "driverId": "lewis-hamilton",
+        "points": 229,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 4,
+        "positionNumber": 4,
+        "positionText": "4",
+        "driverId": "max-verstappen",
+        "points": 221,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 5,
+        "positionNumber": 5,
+        "positionText": "5",
+        "driverId": "charles-leclerc",
+        "points": 215,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 6,
+        "positionNumber": 6,
+        "positionText": "6",
+        "driverId": "lando-norris",
+        "points": 201,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 7,
+        "positionNumber": 7,
+        "positionText": "7",
+        "driverId": "oscar-piastri",
+        "points": 138,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 8,
+        "positionNumber": 8,
+        "positionText": "8",
+        "driverId": "isack-hadjar",
+        "points": 97,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 9,
+        "positionNumber": 9,
+        "positionText": "9",
+        "driverId": "liam-lawson",
+        "points": 75,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 10,
+        "positionNumber": 10,
+        "positionText": "10",
+        "driverId": "pierre-gasly",
+        "points": 41,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 11,
+        "positionNumber": 11,
+        "positionText": "11",
+        "driverId": "arvid-lindblad",
+        "points": 38,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 12,
+        "positionNumber": 12,
+        "positionText": "12",
+        "driverId": "franco-colapinto",
+        "points": 27,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 13,
+        "positionNumber": 13,
+        "positionText": "13",
+        "driverId": "oliver-bearman",
+        "points": 23,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 14,
+        "positionNumber": 14,
+        "positionText": "14",
+        "driverId": "nico-hulkenberg",
+        "points": 13,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 15,
+        "positionNumber": 15,
+        "positionText": "15",
+        "driverId": "gabriel-bortoleto",
+        "points": 10,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 16,
+        "positionNumber": 16,
+        "positionText": "16",
+        "driverId": "esteban-ocon",
+        "points": 7,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 17,
+        "positionNumber": 17,
+        "positionText": "17",
+        "driverId": "fernando-alonso",
+        "points": 7,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 18,
+        "positionNumber": 18,
+        "positionText": "18",
+        "driverId": "carlos-sainz-jr",
+        "points": 7,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 19,
+        "positionNumber": 19,
+        "positionText": "19",
+        "driverId": "alexander-albon",
+        "points": 5,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 20,
+        "positionNumber": 20,
+        "positionText": "20",
+        "driverId": "yuki-tsunoda",
+        "points": 1,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 21,
+        "positionNumber": 21,
+        "positionText": "21",
+        "driverId": "lance-stroll",
+        "points": 0,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 22,
+        "positionNumber": 22,
+        "positionText": "22",
+        "driverId": "valtteri-bottas",
+        "points": 0,
+        "championshipWon": false
+    },
+    {
+        "year": 2026,
+        "positionDisplayOrder": 23,
+        "positionNumber": 23,
+        "positionText": "23",
+        "driverId": "sergio-perez",
+        "points": 0,
+        "championshipWon": false
+    }
+]

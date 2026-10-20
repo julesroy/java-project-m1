@@ -1,0 +1,79 @@
+[
+    {
+        "id": "alpine-a526",
+        "constructorId": "alpine",
+        "name": "A526",
+        "fullName": "Alpine A526",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "aston-martin-amr26",
+        "constructorId": "aston-martin",
+        "name": "AMR26",
+        "fullName": "Aston Martin AMR26",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "audi-r26",
+        "constructorId": "audi",
+        "name": "R26",
+        "fullName": "Audi R26",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "cadillac-ca01",
+        "constructorId": "cadillac",
+        "name": "CA01",
+        "fullName": "Cadillac CA01",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "ferrari-sf-26",
+        "constructorId": "ferrari",
+        "name": "SF-26",
+        "fullName": "Ferrari SF-26",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "haas-vf-26",
+        "constructorId": "haas",
+        "name": "VF-26",
+        "fullName": "Haas VF-26",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "mclaren-mcl40",
+        "constructorId": "mclaren",
+        "name": "MCL40",
+        "fullName": "McLaren MCL40",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "mercedes-f1-w17",
+        "constructorId": "mercedes",
+        "name": "F1 W17",
+        "fullName": "Mercedes F1 W17",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "racing-bulls-vcarb-03",
+        "constructorId": "racing-bulls",
+        "name": "VCARB 03",
+        "fullName": "Racing Bulls VCARB 03",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "red-bull-rb22",
+        "constructorId": "red-bull",
+        "name": "RB22",
+        "fullName": "Red Bull RB22",
+        "tyres": "Pirelli P Zero"
+    },
+    {
+        "id": "williams-fw48",
+        "constructorId": "williams",
+        "name": "FW48",
+        "fullName": "Williams FW48",
+        "tyres": "Pirelli P Zero"
+    }
+]
