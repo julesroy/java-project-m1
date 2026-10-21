@@ -1,4 +1,4 @@
-package Teams;
+package teams;
 
 public class Car {
     private String id;
@@ -7,9 +7,9 @@ public class Car {
     private String tyres;
 
     // constructors
-    Car() {}
+    public Car() {}
 
-    Car(String id, String name, String constructorId,  String tyres) {
+    public Car(String id, String name, String constructorId,  String tyres) {
         this.id = id;
         this.name = name;
         this.constructorId = constructorId;
@@ -23,5 +23,9 @@ public class Car {
 
     public String getName() {
         return name;
+    }
+
+    public String getConstructorId() {
+        return constructorId;
     }
 }

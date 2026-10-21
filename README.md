@@ -14,7 +14,7 @@ NB : certains fichiers sont plus courts dans mon projets que dans le repo f1db c
 src/
 |----main/
    |----java/
-      |----TeamMembers/
+      |----teammembers/
       |----Main
 |----resources/
 |----tests/

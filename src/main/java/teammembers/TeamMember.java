@@ -1,15 +1,15 @@
-package TeamMembers;
+package teammembers;
 
-public class TeamMembers {
-    protected String id;
-    protected String lastName;
-    protected String firstName;
+public class TeamMember {
+    private String id;
+    private String lastName;
+    private String firstName;
 
     // constructors
-    protected TeamMembers() {
+    public TeamMember() {
     }
 
-    protected TeamMembers(String id, String lastName, String firstName) {
+    public TeamMember(String id, String lastName, String firstName) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;

@@ -1,6 +1,6 @@
-package TeamMembers;
+package teammembers;
 
-public final class Driver extends TeamMembers {
+public final class Driver extends TeamMember {
     private int totalPoints;
     private int totalRaceWins;
     private int totalPodiums;

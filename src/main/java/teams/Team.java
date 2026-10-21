@@ -1,4 +1,4 @@
-package Teams;
+package teams;
 
 public class Team {
     private String id;
@@ -8,10 +8,9 @@ public class Team {
     // constructors
     public Team() {}
 
-    public Team(String id, String fullName, Car car) {
+    public Team(String id, String fullName) {
         this.id = id;
         this.fullName = fullName;
-        this.car = car;
     }
 
     // getters
@@ -21,5 +20,14 @@ public class Team {
 
     public String getFullName() {
         return fullName;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    // setters
+    public void setCar(Car car) {
+        this.car = car;
     }
 }
