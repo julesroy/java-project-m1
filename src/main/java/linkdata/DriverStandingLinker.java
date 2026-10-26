@@ -1,6 +1,6 @@
 package linkdata;
 
-import teammembers.Driver;
+import drivers.Driver;
 import standings.DriverStanding;
 import standings.DriverStandingFull;
 

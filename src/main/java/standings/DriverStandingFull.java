@@ -1,5 +1,5 @@
 package standings;
 
-import teammembers.Driver;
+import drivers.Driver;
 
 public record DriverStandingFull(Driver driver, DriverStanding driverStanding) { }

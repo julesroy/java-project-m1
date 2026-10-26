@@ -1,7 +1,8 @@
+import appdisplay.MainMenu;
 import jsonloader.JsonLoader;
 import linkdata.*;
 import standings.*;
-import teammembers.*;
+import drivers.*;
 import teams.*;
 import tools.jackson.core.type.TypeReference;
 import java.util.List;
@@ -19,12 +20,7 @@ public class Main {
         TeamCarLinker teamCarLinker = new TeamCarLinker();
         List<TeamCar> teamCars = teamCarLinker.link(teams, cars);
 
-        for (DriverStandingFull driverStandingFull : driverStandingFulls) {
-            System.out.println(driverStandingFull.driverStanding().getPositionNumber() + ". " + driverStandingFull.driver().getLastName() + " : " + driverStandingFull.driverStanding().getPoints() + "pts");
-        }
-
-        for (TeamCar teamCar : teamCars) {
-            System.out.println(teamCar.team().getFullName() + " : " + teamCar.car().getName());
-        }
+        MainMenu mainMenu = new MainMenu(driverStandingFulls, teamCars);
+        mainMenu.display();
     }
 }
