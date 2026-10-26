@@ -3,7 +3,6 @@ package teams;
 public class Team {
     private String id;
     private String fullName;
-    private Car car;
 
     // constructors
     public Team() {}
@@ -20,14 +19,5 @@ public class Team {
 
     public String getFullName() {
         return fullName;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    // setters
-    public void setCar(Car car) {
-        this.car = car;
     }
 }

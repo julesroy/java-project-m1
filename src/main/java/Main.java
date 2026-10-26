@@ -1,41 +1,30 @@
+import jsonloader.JsonLoader;
+import linkdata.*;
+import standings.*;
 import teammembers.*;
 import teams.*;
 import tools.jackson.core.type.TypeReference;
-import tools.jackson.databind.*;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        ObjectMapper mapper = new ObjectMapper();
+        List<Driver> drivers = JsonLoader.loadList("/f1db-drivers.json", new TypeReference<List<Driver>>() {});
+        List<Car> cars = JsonLoader.loadList("/f1db-cars.json", new TypeReference<List<Car>>() {});
+        List<Team> teams = JsonLoader.loadList("/f1db-teams.json", new TypeReference<List<Team>>() {});
+        List<DriverStanding> driversStandings = JsonLoader.loadList("/f1db-drivers-standings.json", new TypeReference<List<DriverStanding>>() {});
 
-        List<Driver> drivers = mapper.readValue(
-            Main.class.getResourceAsStream("/f1db-drivers.json"),
-            new TypeReference<List<Driver>>(){}
-        );
+        DriverStandingLinker driverStandingLinker = new DriverStandingLinker();
+        List<DriverStandingFull> driverStandingFulls = driverStandingLinker.link(driversStandings, drivers);
 
-        List<Car> cars = mapper.readValue(
-                Main.class.getResourceAsStream("/f1db-cars.json"),
-                new TypeReference<List<Car>>(){}
-        );
+        TeamCarLinker teamCarLinker = new TeamCarLinker();
+        List<TeamCar> teamCars = teamCarLinker.link(teams, cars);
 
-        List<Team> teams = mapper.readValue(
-                Main.class.getResourceAsStream("/f1db-teams.json"),
-                new TypeReference<List<Team>>(){}
-        );
+        for (DriverStandingFull driverStandingFull : driverStandingFulls) {
+            System.out.println(driverStandingFull.driverStanding().getPositionNumber() + ". " + driverStandingFull.driver().getLastName() + " : " + driverStandingFull.driverStanding().getPoints() + "pts");
+        }
 
-        Map<String, Car> carsByConstructor = cars.stream()
-                .collect(Collectors.toMap(Car::getConstructorId, car -> car, (car1, car2) -> car1)); // permet de supprimer les doublons
-
-        for (Team team : teams) {
-            Car car = carsByConstructor.get(team.getId());
-            if (car != null) {
-                team.setCar(car);
-                System.out.println(team.getFullName() + ", " + car.getName());
-            } else {
-                System.out.println(team.getFullName() + ", aucune voiture pour cette ecurie");
-            }
+        for (TeamCar teamCar : teamCars) {
+            System.out.println(teamCar.team().getFullName() + " : " + teamCar.car().getName());
         }
     }
 }
