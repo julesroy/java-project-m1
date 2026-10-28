@@ -13,14 +13,18 @@ public class Main {
         List<Car> cars = JsonLoader.loadList("/f1db-cars.json", new TypeReference<List<Car>>() {});
         List<Team> teams = JsonLoader.loadList("/f1db-teams.json", new TypeReference<List<Team>>() {});
         List<DriverStanding> driversStandings = JsonLoader.loadList("/f1db-drivers-standings.json", new TypeReference<List<DriverStanding>>() {});
+        List<TeamStanding> teamsStandings = JsonLoader.loadList("/f1db-teams-standings.json", new TypeReference<List<TeamStanding>>() {});
 
         DriverStandingLinker driverStandingLinker = new DriverStandingLinker();
         List<DriverStandingFull> driverStandingFulls = driverStandingLinker.link(driversStandings, drivers);
 
+        TeamStandingLinker teamStandingLinker = new TeamStandingLinker();
+        List<TeamStandingFull> teamStandingFulls = teamStandingLinker.link(teamsStandings, teams);
+
         TeamCarLinker teamCarLinker = new TeamCarLinker();
         List<TeamCar> teamCars = teamCarLinker.link(teams, cars);
 
-        MainMenu mainMenu = new MainMenu(driverStandingFulls, teamCars);
+        MainMenu mainMenu = new MainMenu(driverStandingFulls, teamStandingFulls, teamCars);
         mainMenu.display();
     }
 }
