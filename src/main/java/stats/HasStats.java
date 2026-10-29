@@ -10,7 +10,9 @@ public interface HasStats {
         if (getTotalPoints() == 0 || getTotalRaceStarts() == 0) {
             return 0.0;
         } else {
-            return (double)getTotalPoints() / getTotalRaceStarts();
+            double averagePoints = (double)getTotalPoints() / getTotalRaceStarts();
+            averagePoints = Math.round(averagePoints * 100.0) / 100.0;
+            return averagePoints;
         }
     }
 
@@ -18,7 +20,9 @@ public interface HasStats {
         if (getTotalRaceWins() == 0 || getTotalRaceStarts() == 0) {
             return 0.0;
         } else {
-            return (double)getTotalRaceWins() / getTotalRaceStarts();
+            double winRate = (double)getTotalRaceWins() / getTotalRaceStarts();
+            winRate = Math.round(winRate * 100.0) / 100.0;
+            return winRate;
         }
     }
 
@@ -26,7 +30,9 @@ public interface HasStats {
         if (getTotalPodiums() == 0 || getTotalRaceStarts() == 0)   {
             return 0.0;
         } else {
-            return (double)getTotalPodiums() / getTotalRaceStarts();
+            double podiumRate = (double)getTotalPodiums() / getTotalRaceStarts();
+            podiumRate = Math.round(podiumRate * 100.0) / 100.0;
+            return podiumRate;
         }
     }
 }
