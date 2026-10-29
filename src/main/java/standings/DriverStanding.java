@@ -3,6 +3,7 @@ package standings;
 public class DriverStanding extends Standing {
     private String driverId;
 
+    // constructeurs
     public DriverStanding() { super(); }
 
     public DriverStanding(String driverId, int positionNumber, int points) {
@@ -10,7 +11,7 @@ public class DriverStanding extends Standing {
         this.driverId = driverId;
     }
 
-    //getters
+    // getters
     public String getDriverId() {
         return driverId;
     }

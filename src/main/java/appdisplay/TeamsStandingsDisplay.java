@@ -6,6 +6,7 @@ import java.util.List;
 public class TeamsStandingsDisplay implements DisplayData {
     private final List<TeamStandingFull> standings;
 
+    // constructeur
     public TeamsStandingsDisplay(List<TeamStandingFull> standings) {
         this.standings = standings;
     }
@@ -20,7 +21,7 @@ public class TeamsStandingsDisplay implements DisplayData {
         );
         System.out.println("---------------------------");
         for (TeamStandingFull item : standings) {
-            System.out.printf("%02d | %-12s | %3d pts%n",
+            System.out.printf("%02d | %-12s | %3d pts\n",
                     item.teamStanding().getPositionNumber(),
                     item.team().getName(),
                     item.teamStanding().getPoints());

@@ -1,6 +1,8 @@
 package drivers;
 
-public final class Driver {
+import stats.HasStats;
+
+public final class Driver implements HasStats {
     private String id;
     private String lastName;
     private String firstName;
@@ -8,11 +10,8 @@ public final class Driver {
     private int totalRaceWins;
     private int totalPodiums;
     private int totalRaceStarts;
-    private double averagePoints;
-    private double winRate;
-    private double podiumRate;
 
-    // constructors
+    // constructeurs
     public Driver() {
         super();
     }
@@ -29,56 +28,26 @@ public final class Driver {
 
     // getters
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
-    public int getTotalPoints() {
-        return totalPoints;
-    }
+    @Override
+    public int getTotalPoints() { return this.totalPoints; }
 
-    public int getTotalRaceWins() { return totalRaceWins; }
+    @Override
+    public int getTotalRaceWins() { return this.totalRaceWins; }
 
-    public int getTotalPodiums() { return totalPodiums; }
+    @Override
+    public int getTotalPodiums() { return this.totalPodiums; }
 
-    public int getTotalRaceStarts() { return totalRaceStarts; }
-
-    public double getAveragePoints() { return averagePoints; }
-
-    public double getWinRate() { return winRate; }
-
-    public double getPodiumRate() { return podiumRate; }
-
-    public void calculateAveragePoints() {
-        this.averagePoints = (double)totalPoints / totalRaceStarts;
-    }
-
-    public void calculateWinRate() {
-        if (this.totalRaceWins > 0) {
-            this.winRate = (double)totalRaceWins / totalRaceStarts;
-        } else  {
-            this.winRate = 0.0;
-        }
-    }
-
-    public void calculatePodiumRate() {
-        if (this.totalPodiums > 0) {
-            this.podiumRate = (double)totalPodiums / totalRaceStarts;
-        } else   {
-            this.podiumRate = 0.0;
-        }
-    }
-
-    public void calculateStats() {
-        this.calculateAveragePoints();
-        this.calculateWinRate();
-        this.calculatePodiumRate();
-    }
+    @Override
+    public int getTotalRaceStarts() { return this.totalRaceStarts; }
 }

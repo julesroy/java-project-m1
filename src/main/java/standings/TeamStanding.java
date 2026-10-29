@@ -3,6 +3,7 @@ package standings;
 public class TeamStanding extends Standing {
     private String constructorId;
 
+    // constructeurs
     public TeamStanding() { super(); }
 
     public TeamStanding(String constructorId, int positionNumber, int points) {
@@ -10,7 +11,7 @@ public class TeamStanding extends Standing {
         this.constructorId = constructorId;
     }
 
-    //getters
+    // getters
     public String getConstructorId() {
         return constructorId;
     }

@@ -6,7 +6,7 @@ public class Car {
     private String constructorId;
     private String tyres;
 
-    // constructors
+    // constructeurs
     public Car() {}
 
     public Car(String id, String name, String constructorId,  String tyres) {

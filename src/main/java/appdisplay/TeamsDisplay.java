@@ -6,32 +6,39 @@ import teams.TeamCar;
 public class TeamsDisplay implements DisplayData {
     private final List<TeamCar> teamCars;
 
+    // constructeur
     public TeamsDisplay(List<TeamCar> teamCars) {
         this.teamCars = teamCars;
     }
 
     @Override
     public void display() {
-        System.out.println("\n=====================================================================");
-        System.out.printf("%-31s | %-8s | %-4s | %-3s | %-3s | %-5s%n",
+        System.out.println("\n===============================================================================================");
+        System.out.printf("%-31s | %-8s | %-4s | %-5s | %-3s | %-3s | %-9s | %-4s | %-4s\n",
                 "Teams",
                 "Car",
                 "C",
-                "V",
+                "Pts",
                 "P",
-                "Pts"
+                "V",
+                "Moy. pts",
+                "%P",
+                "%V"
         );
-        System.out.println("---------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------");
         for (TeamCar item : teamCars) {
-            System.out.printf("%-31s | %-8s | %4d | %3d | %3d | %5d%n",
+            System.out.printf("%-31s | %-8s | %4d | %5d | %3d | %3d | %5.2f pts | %2.2f | %2.2f\n",
                     item.team().getFullName(),
                     item.car().getName(),
                     item.team().getTotalRaceStarts(),
-                    item.team().getTotalRaceWins(),
+                    item.team().getTotalPoints(),
                     item.team().getTotalPodiums(),
-                    item.team().getTotalPoints()
+                    item.team().getTotalRaceWins(),
+                    item.team().getAveragePoints(),
+                    item.team().getPodiumRate(),
+                    item.team().getWinRate()
             );
         }
-        System.out.println("=====================================================================\n");
+        System.out.println("===============================================================================================\n");
     }
 }

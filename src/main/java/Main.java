@@ -15,10 +15,7 @@ public class Main {
         List<DriverStanding> driversStandings = JsonLoader.loadList("/f1db-drivers-standings.json", new TypeReference<List<DriverStanding>>() {});
         List<TeamStanding> teamsStandings = JsonLoader.loadList("/f1db-teams-standings.json", new TypeReference<List<TeamStanding>>() {});
 
-        for (Driver driver : drivers) {
-            driver.calculateStats();
-        }
-
+        // on lie les donnees entre les pilotes, teams, voitures, et leurs classements
         DriverStandingLinker driverStandingLinker = new DriverStandingLinker();
         List<DriverStandingFull> driverStandingFulls = driverStandingLinker.link(driversStandings, drivers);
 
@@ -28,6 +25,7 @@ public class Main {
         TeamCarLinker teamCarLinker = new TeamCarLinker();
         List<TeamCar> teamCars = teamCarLinker.link(teams, cars);
 
+        // demarrage de l'affichage
         MainMenu mainMenu = new MainMenu(driverStandingFulls, teamStandingFulls, drivers, teamCars);
         mainMenu.display();
     }

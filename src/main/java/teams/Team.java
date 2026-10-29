@@ -1,6 +1,8 @@
 package teams;
 
-public class Team {
+import stats.HasStats;
+
+public class Team implements HasStats {
     private String id;
     private String fullName;
     private String name;
@@ -9,31 +11,39 @@ public class Team {
     private int totalPodiums;
     private int totalRaceStarts;
 
-    // constructors
+    // constructeurs
     public Team() {}
 
-    public Team(String id, String fullName, String name) {
+    public Team(String id, String fullName, String name, int totalPoints, int totalRaceWins, int totalPodiums, int totalRaceStarts) {
         this.id = id;
         this.fullName = fullName;
         this.name = name;
+        this.totalPoints = totalPoints;
+        this.totalRaceWins = totalRaceWins;
+        this.totalPodiums = totalPodiums;
+        this.totalRaceStarts = totalRaceStarts;
     }
 
     // getters
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getFullName() {
-        return fullName;
+        return this.fullName;
     }
 
-    public String getName() { return name; }
+    public String getName() { return this.name; }
 
-    public int getTotalPoints() { return totalPoints; }
+    @Override
+    public int getTotalPoints() { return this.totalPoints; }
 
-    public int getTotalRaceWins() { return totalRaceWins; }
+    @Override
+    public int getTotalRaceWins() { return this.totalRaceWins; }
 
-    public int getTotalPodiums() { return totalPodiums; }
+    @Override
+    public int getTotalPodiums() { return this.totalPodiums; }
 
-    public int getTotalRaceStarts() { return totalRaceStarts; }
+    @Override
+    public int getTotalRaceStarts() { return this.totalRaceStarts; }
 }
