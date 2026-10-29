@@ -25,7 +25,7 @@ public class MainMenu implements DisplayData {
     }
 
     @Override
-    public void display() {
+    public void display() throws InputMismatchException, MainMenuChoiceException {
         Scanner scanner = new Scanner(System.in);
         boolean running = true; // indique si le programme est en train de tourner
 
