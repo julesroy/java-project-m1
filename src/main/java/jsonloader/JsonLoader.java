@@ -12,11 +12,11 @@ public class JsonLoader {
     public static <T> List<T> loadList(String path, TypeReference<List<T>> typeReference) {
         try (InputStream is = JsonLoader.class.getResourceAsStream(path)) {
             if (is == null) {
-                throw new IllegalArgumentException("Resource not available : " + path);
+                throw new IllegalArgumentException("Fichier introuvable : " + path);
             }
             return mapper.readValue(is, typeReference);
         } catch (Exception e) {
-            throw new RuntimeException("Error while reading file : " + path, e);
+            throw new RuntimeException("Erreur en lisant le fichier : " + path, e);
         }
     }
 }

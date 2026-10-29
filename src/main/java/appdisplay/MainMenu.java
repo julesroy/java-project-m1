@@ -2,6 +2,7 @@ package appdisplay;
 
 import static appdisplay.ConsoleColors.*;
 import appdisplay.exception.MainMenuChoiceException;
+import drivers.Driver;
 import standings.DriverStandingFull;
 import standings.TeamStandingFull;
 import teams.TeamCar;
@@ -12,11 +13,13 @@ import java.util.Scanner;
 public class MainMenu implements DisplayData {
     private final List<DriverStandingFull> driverStandingFulls;
     private final List<TeamStandingFull> teamStandingFulls;
+    private final List<Driver> drivers;
     private final List<TeamCar> teamCars;
 
-    public MainMenu(List<DriverStandingFull> driverStandingFulls, List<TeamStandingFull> teamStandingFulls, List<TeamCar>teamCars) {
+    public MainMenu(List<DriverStandingFull> driverStandingFulls, List<TeamStandingFull> teamStandingFulls, List<Driver>drivers, List<TeamCar>teamCars) {
         this.driverStandingFulls = driverStandingFulls;
         this.teamStandingFulls = teamStandingFulls;
+        this.drivers = drivers;
         this.teamCars = teamCars;
     }
 
@@ -26,7 +29,7 @@ public class MainMenu implements DisplayData {
         boolean running = true; // indique si le programme est en train de tourner
 
         while (running) {
-            System.out.println("=== Menu F1 Projet Java ===");
+            System.out.println("====== Menu F1 Projet Java ======");
             System.out.println("1. Voir le classement des pilotes");
             System.out.println("2. Voir le classement des teams");
             System.out.println("3. Voir les pilotes en detail");
@@ -57,14 +60,14 @@ public class MainMenu implements DisplayData {
             }
 
             if (choice == 0) {
-                System.out.println("Arret du programme...");
+                System.out.println(GREEN + "Arret du programme..." + RESET);
                 running = false; // on sort de la boucle while
             } else if (choice == 1) {
                 new DriversStandingsDisplay(driverStandingFulls).display();
             } else if (choice == 2) {
                 new TeamsStandingsDisplay(teamStandingFulls).display();
             } else if (choice == 3) {
-                System.out.println("A ajouter");
+                new DriversDisplay(drivers).display();
             } else if (choice == 4) {
                 new TeamsDisplay(teamCars).display();
             }

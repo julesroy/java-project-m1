@@ -12,13 +12,19 @@ public class DriversStandingsDisplay implements DisplayData {
 
     @Override
     public void display() {
-        System.out.println("\n========== Classement des pilotes ==========");
+        System.out.println("\n================================");
+        System.out.printf("%-2s | %-17s | %-3s%n",
+                "P",
+                "Pilotes",
+                "Pts"
+        );
+        System.out.println("--------------------------------");
         for (DriverStandingFull item : standings) {
-            System.out.printf("%2d. %-15s : %3d pts%n",
+            System.out.printf("%02d | %-17s | %3d pts%n",
                     item.driverStanding().getPositionNumber(),
-                    item.driver().getLastName(),
+                    item.driver().getFirstName() + " " + item.driver().getLastName().toUpperCase(),
                     item.driverStanding().getPoints());
         }
-        System.out.println("============================================\n");
+        System.out.println("================================\n");
     }
 }
