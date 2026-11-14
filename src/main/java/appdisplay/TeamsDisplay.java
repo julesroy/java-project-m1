@@ -13,8 +13,8 @@ public class TeamsDisplay implements DisplayData {
 
     @Override
     public void display() {
-        System.out.println("\n===============================================================================================");
-        System.out.printf("%-31s | %-8s | %-4s | %-5s | %-3s | %-3s | %-9s | %-4s | %-4s\n",
+        System.out.println("\n===========================================================================================");
+        System.out.printf("%-31s | %-8s | %-4s | %-5s | %-3s | %-3s | %-9s | %-2s | %-2s\n",
                 "Teams",
                 "Car",
                 "C",
@@ -25,9 +25,9 @@ public class TeamsDisplay implements DisplayData {
                 "%P",
                 "%V"
         );
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------");
         for (TeamCar item : teamCars) {
-            System.out.printf("%-31s | %-8s | %4d | %5d | %3d | %3d | %5.2f pts | %2.2f | %2.2f\n",
+            System.out.printf("%-31s | %-8s | %4d | %5d | %3d | %3d | %5.2f pts | %2d | %2d\n",
                     item.team().getFullName(),
                     item.car().getName(),
                     item.team().getTotalRaceStarts(),
@@ -39,6 +39,6 @@ public class TeamsDisplay implements DisplayData {
                     item.team().getWinRate()
             );
         }
-        System.out.println("===============================================================================================\n");
+        System.out.println("===========================================================================================\n");
     }
 }

@@ -13,8 +13,8 @@ public class DriversDisplay implements DisplayData {
 
     @Override
     public void display() {
-        System.out.println("\n========================================================================");
-        System.out.printf("%-17s | %-3s | %-8s | %-3s | %-3s | %-9s | %-4s | %-4s\n",
+        System.out.println("\n====================================================================");
+        System.out.printf("%-17s | %-3s | %-8s | %-3s | %-3s | %-9s | %-2s | %-2s\n",
                 "Pilotes",
                 "C",
                 "Pts",
@@ -24,9 +24,9 @@ public class DriversDisplay implements DisplayData {
                 "%P",
                 "%V"
                 );
-        System.out.println("------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------");
         for (Driver item : drivers) {
-            System.out.printf("%-17s | %3d | %4d pts | %3d | %3d | %5.2f pts | %2.2f | %2.2f\n",
+            System.out.printf("%-17s | %3d | %4d pts | %3d | %3d | %5.2f pts | %2d | %2d\n",
                     item.getLastName().toUpperCase() + " " + item.getFirstName(),
                     item.getTotalRaceStarts(),
                     item.getTotalPoints(),
@@ -37,6 +37,6 @@ public class DriversDisplay implements DisplayData {
                     item.getWinRate()
             );
         }
-        System.out.println("========================================================================\n");
+        System.out.println("====================================================================\n");
     }
 }

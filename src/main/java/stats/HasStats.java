@@ -16,23 +16,23 @@ public interface HasStats {
         }
     }
 
-    default double getWinRate() {
+    default int getWinRate() {
         if (getTotalRaceWins() == 0 || getTotalRaceStarts() == 0) {
-            return 0.0;
+            return 0;
         } else {
             double winRate = (double)getTotalRaceWins() / getTotalRaceStarts();
-            winRate = Math.round(winRate * 100.0) / 100.0;
-            return winRate;
+            winRate = Math.round(winRate * 100.0);
+            return (int)winRate;
         }
     }
 
-    default double getPodiumRate() {
+    default int getPodiumRate() {
         if (getTotalPodiums() == 0 || getTotalRaceStarts() == 0)   {
-            return 0.0;
+            return 0;
         } else {
             double podiumRate = (double)getTotalPodiums() / getTotalRaceStarts();
-            podiumRate = Math.round(podiumRate * 100.0) / 100.0;
-            return podiumRate;
+            podiumRate = Math.round(podiumRate * 100.0);
+            return (int)podiumRate;
         }
     }
 }

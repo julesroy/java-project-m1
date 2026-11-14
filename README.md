@@ -2,6 +2,8 @@
 
 ---
 
+Ce projet permet de consulter les classements et certaines statistiques de la saison 2026 de Formule 1 (jusqu'au GP de Singapour). Un comparateur de pilotes est aussi disponible.
+
 Mon projet repose sur les éléments suivants :
 - JAVA 25
 - Maven
@@ -15,9 +17,22 @@ NB :
 
 ---
 
+### Démarrer le projet :
+
+Avec IntelliJ :
+- ouvrir le projet dans IntelliJ
+- charger les dépendances dans pom.xml
+- puis ouvrir le fichier src/main/java/Main.java et cliquer sur la flèche verte pour lancer le programme.
+
+En ligne de commande (il faut avoir mvn installé sur sa machine) :
+```bash
+mvn clean compile
+mvn exec:java -Dexec.mainClass="Main"
+```
+
 ### Structure du projet (packages) :
 
-J'ai choisi de regroupé les différentes classes selon différents package pour avoir une architecture logique et simple :
+J'ai choisi de regrouper les différentes classes selon différents package pour avoir une architecture logique et simple :
 
 ```
 src/
@@ -51,7 +66,7 @@ appdisplay :
 - appdisplay/TeamsDisplay.java : classe qui affiche les données des teams
 - appdisplay/DriversStandingsDisplay.java : classe qui affiche les données du classement des pilotes
 - appdisplay/TeamsStandingsDisplay.java : classe qui affiche les données du classement des teams
-- appdisplay/ConsoleColors.java : classe qui gere les couleurs de la console
+- appdisplay/ConsoleColors.java : classe qui gere les couleurs du texte de la console
 - appdisplay/exception/MainMenuChoiceException.java : exception qui gere les erreurs de choix du menu principal
 
 drivers : 
@@ -75,9 +90,6 @@ standings :
 
 stats :
 - stats/HasStats.java : interface pour les méthodes des classes qui ont des statistiques à calculer
-- stats/StatsCalculator.java : classe qui calcule les statistiques des pilotes et des teams
-- stats/DriversStatsCalculator.java : classe qui calcule les statistiques des pilotes
-- stats/TeamsStatsCalculator.java : classe qui calcule les statistiques des teams
 
 teams :
 - teams/Team.java : classe qui represente une team
@@ -97,3 +109,50 @@ jsonloader :
 
 stats :
 - HasStatsTest.java : teste les calculs effectués par l'interface HasStats
+
+### Choix techniques :
+
+- Classe abstraite générique (DataLinker), pour éviter d'avoir à dupliquer l'implémentation de la logique d'indexation par clé.
+- Utilisation de records pour les données immuables, cela m'a permis d'éviter d'avoir à développer tout le code boilerplate (getters, setters...) pour ces données.
+- Méthodes par défaut dans HasStats, comme les calculs sont identiques pour un pilote et une team, j'ai mis directement la logique de calcul dans l'interface pour ne pas dupliquer le code.
+
+### Héritage :
+
+- Les classes DriverStanding et TeamStanding héritent de la classe mère Standing, ce qui permet de mutualiser certains attributs comme la position au classement etc...
+
+### Classes abstraites / interfaces :
+
+- La classe DataLinker est abstraite, et laisse ses classes filles redéfinir ses méthodes pour récupérer les bonnes clés (polymorphisme).
+- L'interface HasStats permet le calcul des stats des pilotes / teams.
+
+### Exceptions :
+
+- MainMenuChoiceException, permet de lever une exception si l'entier choisi par l'utilisateur est en dehors de 0 et 5.
+
+### Chargement des données :
+
+Au démarrage du programme, la classe JsonLoader charge les 5 fichiers suivants :
+- f1db-cars.json
+- f1db-drivers.json
+- f1db-drivers-standings.json
+- f1db-teams.json
+- f1db-teams-standings.json
+
+Ces différents fichiers sont ensuite traités pour être utilisés comme des objets Java.
+
+### SOLID :
+
+- S : chaque classe a une seule responsabilité (les classes de appdisplay ne gèrent que l'affichage, celles de jsonloader que le chargement des fichiers .json...)
+- L : DriverStanding et TeamStanding peuvent être substituées à Standing sans problème.
+- I : les interfaces HasStats et DisplayData sont courtes et précises.
+
+### Execution des tests :
+
+Avec IntelliJ :
+- ouvrir l'un des fichiers .Java dans les dossiers de test/java/
+- l'exécuter avec la flèche verte
+
+En ligne de commande (il faut avoir mvn installé sur sa machine) :
+```bash
+mvn test
+```
