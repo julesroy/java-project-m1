@@ -23,7 +23,7 @@ public class DriversStandingsDisplay implements DisplayData {
         for (DriverStandingFull item : standings) {
             System.out.printf("%02d | %-17s | %3d pts\n",
                     item.driverStanding().getPositionNumber(),
-                    item.driver().getFirstName() + " " + item.driver().getLastName().toUpperCase(),
+                    item.driver().getLastName().toUpperCase() +  " " + item.driver().getFirstName(),
                     item.driverStanding().getPoints());
         }
         System.out.println("================================\n");

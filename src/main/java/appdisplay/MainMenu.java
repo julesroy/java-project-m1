@@ -35,6 +35,7 @@ public class MainMenu implements DisplayData {
             System.out.println("2. Voir le classement des teams");
             System.out.println("3. Voir les pilotes en detail");
             System.out.println("4. Voir les teams en detail");
+            System.out.println("5. Comparer 2 pilotes");
             System.out.println("0. Quitter");
             System.out.print("Entrez votre choix : ");
 
@@ -46,12 +47,12 @@ public class MainMenu implements DisplayData {
                 }
                 choice = scanner.nextInt();
 
-                if (choice < 0 || choice > 4) {
-                    // si la valeur n'est pas entre 0 et 4
+                if (choice < 0 || choice > 5) {
+                    // si la valeur n'est pas entre 0 et 5
                     throw new MainMenuChoiceException();
                 }
             } catch (InputMismatchException e) {
-                System.out.println("\n" + RED + "Erreur : Le nombre choisi doit être un entier entre 0 et 4" + RESET + "\n");
+                System.out.println("\n" + RED + "Erreur : Le nombre choisi doit être un entier entre 0 et 5" + RESET + "\n");
                 scanner.nextLine();
                 continue;
             } catch (MainMenuChoiceException e) {
@@ -71,6 +72,8 @@ public class MainMenu implements DisplayData {
                 new DriversDisplay(drivers).display();
             } else if (choice == 4) {
                 new TeamsDisplay(teamCars).display();
+            } else if (choice == 5) {
+                new DriverComparisonChoice(driverStandingFulls).display();
             }
         }
     }
